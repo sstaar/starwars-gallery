@@ -9,7 +9,7 @@ const Container = styled.div`
     width:80%;
     display:flex;
     justify-content:space-around;
-    background:rgba(255, 255, 255, .9);
+    background:rgba(255, 255, 255, 1);
     -webkit-box-shadow: 0px 0px 20px 10px rgba(255,255,255,0.1); 
     box-shadow: 0px 0px 15px 10px rgba(255,255,255,0.1);
 `;

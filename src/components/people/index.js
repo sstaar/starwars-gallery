@@ -39,7 +39,7 @@ const ButtonText = styled.p`
 const People = () => {
 
     const [data, setData] = useState({
-        people: {},
+        people: [],
         loading: true,
         page: 1,
         next: false,
