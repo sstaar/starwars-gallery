@@ -38,30 +38,30 @@ const DataValue = styled.p`
     width: 50%;
 `;
 
-const PersonCard = ({ person }) => {
+const itemCard = ({ item }) => {
 
     return (
-        <Container to={'/people/' + getDataId(person.url)}>
+        <Container to={'/species/' + getDataId(item.url)}>
             <CustonCard>
                 <DataContainer>
                     <DataLabel>Name </DataLabel>
-                    <DataValue>{person.name}</DataValue>
+                    <DataValue>{item.name}</DataValue>
                 </DataContainer>
                 <DataContainer>
-                    <DataLabel>Gender </DataLabel>
-                    <DataValue>{person.gender}</DataValue>
+                    <DataLabel>Language </DataLabel>
+                    <DataValue>{item.language}</DataValue>
                 </DataContainer>
                 <DataContainer>
-                    <DataLabel>Mass </DataLabel>
-                    <DataValue>{person.mass}</DataValue>
+                    <DataLabel>Classification </DataLabel>
+                    <DataValue>{item.classification}</DataValue>
                 </DataContainer>
                 <DataContainer>
-                    <DataLabel>Height </DataLabel>
-                    <DataValue>{person.height}</DataValue>
+                    <DataLabel>Average Lifespan </DataLabel>
+                    <DataValue>{item.average_lifespan}</DataValue>
                 </DataContainer>
             </CustonCard>
         </Container>
     )
 }
 
-export default PersonCard
+export default itemCard

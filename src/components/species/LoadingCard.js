@@ -33,15 +33,15 @@ const LoadingCard = () => {
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <DataContainer>
-                <DataLabel>Gender </DataLabel>
+                <DataLabel>Language </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <DataContainer>
-                <DataLabel>Mass </DataLabel>
+                <DataLabel>Classification </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <DataContainer>
-                <DataLabel>Height </DataLabel>
+                <DataLabel>Average Lifespan </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
         </Container>

@@ -44,42 +44,47 @@ const DetailsLoading = () => {
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Gender </DataLabel>
+                <DataLabel>Average Height </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Birth Year </DataLabel>
+                <DataLabel>Average Lifespan </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Height </DataLabel>
+                <DataLabel>Classification </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Mass </DataLabel>
+                <DataLabel>Designation </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Hair Color </DataLabel>
+                <DataLabel>Eye Colors </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Eye Color </DataLabel>
+                <DataLabel>Hair Colors </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Skin color </DataLabel>
+                <DataLabel>Skin colorS </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>StarShips </DataLabel>
+                <DataLabel>Language </DataLabel>
+                <DataValue><Skeleton variant="text" width={160} /></DataValue>
+            </DataContainer>
+            <Divider />
+            <DataContainer>
+                <DataLabel>People </DataLabel>
                 <TabletsContainer>
                     <Skeleton variant="rectangular" width={"100%"} height={25} />
                 </TabletsContainer>
@@ -93,23 +98,9 @@ const DetailsLoading = () => {
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Vehicles </DataLabel>
-                <TabletsContainer>
-                    <Skeleton variant="rectangular" width={"100%"} height={25} />
-                </TabletsContainer>
-            </DataContainer>
-            <Divider />
-            <DataContainer>
                 <DataLabel>Home World </DataLabel>
                 <TabletsContainer>
                     <Skeleton variant="rectangular" width={25} height={25} />
-                </TabletsContainer>
-            </DataContainer>
-            <Divider />
-            <DataContainer>
-                <DataLabel>Species </DataLabel>
-                <TabletsContainer>
-                    <Skeleton variant="rectangular" width={"100%"} height={25} />
                 </TabletsContainer>
             </DataContainer>
         </Container>
