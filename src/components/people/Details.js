@@ -62,7 +62,7 @@ const Details = () => {
             }
         };
         getData();
-    }, [])
+    }, [id])
 
     if (loading)
         return <DetailsLoading />

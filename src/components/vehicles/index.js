@@ -71,7 +71,7 @@ const Vehicles = () => {
             }
         };
         getData();
-    }, [loading])
+    }, [loading, page])
 
     if (loading)
         return (

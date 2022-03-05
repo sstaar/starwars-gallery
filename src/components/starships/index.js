@@ -71,7 +71,7 @@ const StarShips = () => {
             }
         };
         getData();
-    }, [loading])
+    }, [loading, page])
 
     if (loading)
         return (

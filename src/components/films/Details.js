@@ -57,14 +57,13 @@ const Details = () => {
         const getData = async () => {
             try {
                 const response = await axios(`https://swapi.dev/api/films/${id}`)
-                console.log("HERE", response)
                 setData({ film: response.data, loading: false });
             } catch (error) {
                 console.log(error)
             }
         };
         getData();
-    }, [])
+    }, [id])
 
     if (loading)
         return <DetailsLoading />

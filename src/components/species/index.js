@@ -71,7 +71,7 @@ const Species = () => {
             }
         };
         getData();
-    }, [loading])
+    }, [loading, page])
 
     if (loading)
         return (

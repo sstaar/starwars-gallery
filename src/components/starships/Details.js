@@ -56,14 +56,13 @@ const Details = () => {
         const getData = async () => {
             try {
                 const response = await axios(`https://swapi.dev/api/starships/${id}`)
-                console.log(response)
                 setData({ starship: response.data, loading: false });
             } catch (error) {
                 console.log(error)
             }
         };
         getData();
-    }, [])
+    }, [id])
 
     if (loading)
         return <DetailsLoading />

@@ -71,7 +71,7 @@ const People = () => {
             }
         };
         getData();
-    }, [loading])
+    }, [loading, page])
 
     if (loading)
         return (

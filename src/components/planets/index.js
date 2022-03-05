@@ -71,7 +71,7 @@ const Planet = () => {
             }
         };
         getData();
-    }, [loading])
+    }, [loading, page])
 
     if (loading)
         return (
