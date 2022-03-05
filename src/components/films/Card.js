@@ -5,11 +5,6 @@ import { Link } from 'react-router-dom';
 import { getDataId } from '../utils/actions';
 
 const Container = styled(Link)`
-    /* margin: 50px auto ; */
-    /* height:46px; */
-    /* margin:5px; */
-    /* border-radius:3px; */
-    /* width:19%; */
     text-decoration:none;
 `;
 

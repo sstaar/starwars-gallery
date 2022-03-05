@@ -8,9 +8,6 @@ import DataTablet from '../utils/DataTablet';
 import DetailsLoading from './DetailsLoading';
 
 const Container = styled(Card)`
-    /* margin: 50px auto ; */
-    /* height:46px; */
-    /* margin:5px; */
     border-radius:3px;
     width:80%;
     margin:auto;

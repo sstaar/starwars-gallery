@@ -9,7 +9,6 @@ const Container = styled.div`
     display:flex ;
     flex-wrap:wrap;
     width:80%;
-    /* gap:5px */
     margin:auto;
 `;
 
@@ -46,8 +45,11 @@ const People = () => {
         previous: false,
     })
 
+    //Spreading the data to make it easy to access
     const { people, loading, page, next, previous } = data;
 
+    //The double check is only there to make sure nothing bad happens
+    //For example a user can enable the button and click it
     const handleChangePage = (isNext) => {
         if (isNext && next)
             setData({ ...data, page: page + 1, loading: true });
@@ -56,6 +58,7 @@ const People = () => {
     }
 
     useEffect(() => {
+        //I made this function asynchronos to use await instead on then/catch
         const getData = async () => {
             try {
                 const response = await axios.get(`https://swapi.dev/api/people/?page=${page}`);
@@ -71,8 +74,10 @@ const People = () => {
             }
         };
         getData();
+        //Loading and page is on the array so that whenever the user changes the page i get the new data
     }, [loading, page])
 
+    //I am using exactly 10 elements because the API doesn't seem to send any more
     if (loading)
         return (
             <Container>

@@ -9,7 +9,6 @@ const Container = styled.div`
     display:flex ;
     flex-wrap:wrap;
     width:80%;
-    /* gap:5px */
     margin:auto;
 `;
 
