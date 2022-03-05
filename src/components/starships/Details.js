@@ -6,6 +6,7 @@ import axios from 'axios';
 import Divider from '@mui/material/Divider';
 import DataTablet from '../utils/DataTablet';
 import DetailsLoading from './DetailsLoading';
+import NotFound from '../utils/NotFound';
 
 const Container = styled(Card)`
     border-radius:3px;
@@ -44,10 +45,11 @@ const Details = () => {
 
     const [data, setData] = useState({
         starship: {},
-        loading: true
+        loading: true,
+        error: false
     });
 
-    const { starship, loading } = data;
+    const { starship, loading, error } = data;
 
     useEffect(() => {
         const getData = async () => {
@@ -55,14 +57,16 @@ const Details = () => {
                 const response = await axios(`https://swapi.dev/api/starships/${id}`)
                 setData({ starship: response.data, loading: false });
             } catch (error) {
-                console.log(error)
+                setData({ ...data, loading: false, error: true });
             }
         };
         getData();
-    }, [id])
+    }, [])// eslint-disable-line
 
     if (loading)
         return <DetailsLoading />
+    if (error)
+        return <NotFound />
     return (
         <Container>
             <DataContainer>

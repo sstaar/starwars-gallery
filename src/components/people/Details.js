@@ -6,6 +6,7 @@ import axios from 'axios';
 import Divider from '@mui/material/Divider';
 import DataTablet from '../utils/DataTablet';
 import DetailsLoading from './DetailsLoading';
+import NotFound from '../utils/NotFound';
 
 const Container = styled(Card)`
     border-radius:3px;
@@ -44,10 +45,11 @@ const Details = () => {
 
     const [data, setData] = useState({
         person: {},
-        loading: true
+        loading: true,
+        error: false
     });
 
-    const { person, loading } = data;
+    const { person, loading, error } = data;
 
     useEffect(() => {
         const getData = async () => {
@@ -55,18 +57,22 @@ const Details = () => {
                 const response = await axios(`https://swapi.dev/api/people/${id}`)
                 setData({ person: response.data, loading: false });
             } catch (error) {
-                console.log(error)
+                setData({ ...data, loading: false, error: true });
             }
         };
         getData();
-    }, [id])
+    }, [])// eslint-disable-line
+
+    console.log(error)
 
     if (loading)
         return <DetailsLoading />
+    if (error)
+        return <NotFound />
     return (
         <Container>
             <DataContainer>
-                <DataLabel>Name </DataLabel>
+                <DataLabel>Namer </DataLabel>
                 <DataValue>{person.name}</DataValue>
             </DataContainer>
             <Divider />
