@@ -46,17 +46,18 @@ const Details = () => {
     let { id } = useParams();
 
     const [data, setData] = useState({
-        person: {},
+        planet: {},
         loading: true
     });
 
-    const { person, loading } = data;
+    const { planet, loading } = data;
 
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await axios(`https://swapi.dev/api/people/${id}`)
-                setData({ person: response.data, loading: false });
+                const response = await axios(`https://swapi.dev/api/planets/${id}`)
+                console.log(response);
+                setData({ planet: response.data, loading: false });
             } catch (error) {
                 console.log(error)
             }
@@ -70,76 +71,60 @@ const Details = () => {
         <Container>
             <DataContainer>
                 <DataLabel>Name </DataLabel>
-                <DataValue>{person.name}</DataValue>
+                <DataValue>{planet.name}</DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Gender </DataLabel>
-                <DataValue>{person.gender}</DataValue>
+                <DataLabel>Climate </DataLabel>
+                <DataValue>{planet.climate}</DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Birth Year </DataLabel>
-                <DataValue>{person.birth_year}</DataValue>
+                <DataLabel>Diameter </DataLabel>
+                <DataValue>{planet.diameter}</DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Height </DataLabel>
-                <DataValue>{person.height}</DataValue>
+                <DataLabel>Population </DataLabel>
+                <DataValue>{planet.population}</DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Mass </DataLabel>
-                <DataValue>{person.mass}</DataValue>
+                <DataLabel>Gravity </DataLabel>
+                <DataValue>{planet.gravity}</DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Hair Color </DataLabel>
-                <DataValue>{person.hair_color}</DataValue>
+                <DataLabel>Orbital Period </DataLabel>
+                <DataValue>{planet.orbital_period}</DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Eye Color </DataLabel>
-                <DataValue>{person.eye_color}</DataValue>
+                <DataLabel>Rotation Period </DataLabel>
+                <DataValue>{planet.rotation_period}</DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Skin color </DataLabel>
-                <DataValue>{person.skin_color}</DataValue>
+                <DataLabel>Surface Water </DataLabel>
+                <DataValue>{planet.surface_water}</DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>StarShips </DataLabel>
+                <DataLabel>Terrain </DataLabel>
+                <DataValue>{planet.terrain}</DataValue>
+            </DataContainer>
+            <Divider />
+            <DataContainer>
+                <DataLabel>Residents </DataLabel>
                 <TabletsContainer>
-                    {person.starships.map((item, key) => <DataTablet key={key} type="SHIP" link={item} />)}
+                    {planet.residents.map((item, key) => <DataTablet key={key} type="PERSON" link={item} />)}
                 </TabletsContainer>
             </DataContainer>
             <Divider />
             <DataContainer>
                 <DataLabel>Films </DataLabel>
                 <TabletsContainer>
-                    {person.films.map((item, key) => <DataTablet key={key} type="FILM" link={item} />)}
-                </TabletsContainer>
-            </DataContainer>
-            <Divider />
-            <DataContainer>
-                <DataLabel>Vehicles </DataLabel>
-                <TabletsContainer>
-                    {person.vehicles.map((item, key) => <DataTablet key={key} type="VEHICLE" link={item} />)}
-                </TabletsContainer>
-            </DataContainer>
-            <Divider />
-            <DataContainer>
-                <DataLabel>Home World </DataLabel>
-                <TabletsContainer>
-                    <DataTablet type="PLANET" link={person.homeworld} />
-                </TabletsContainer>
-            </DataContainer>
-            <Divider />
-            <DataContainer>
-                <DataLabel>Species </DataLabel>
-                <TabletsContainer>
-                    {person.species.map((item, key) => <DataTablet key={key} type="SPECIES" link={item} />)}
+                    {planet.films.map((item, key) => <DataTablet key={key} type="FILM" link={item} />)}
                 </TabletsContainer>
             </DataContainer>
         </Container>
