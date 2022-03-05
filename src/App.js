@@ -7,6 +7,8 @@ import Planet from './components/planets';
 import PlanetDetails from './components/planets/Details';
 import Species from './components/species';
 import SpeciecesDetails from './components/species/Details';
+import StarShips from './components/starships';
+import StarShipsDetails from './components/starships/Details';
 import Tabs from './components/tabs';
 
 const App = () => {
@@ -22,6 +24,8 @@ const App = () => {
         <Route path='/films/:id' element={<FilmDetails />} />
         <Route path='/species' element={<Species />} />
         <Route path='/species/:id' element={<SpeciecesDetails />} />
+        <Route path='/starships' element={<StarShips />} />
+        <Route path='/starships/:id' element={<StarShipsDetails />} />
       </Routes>
     </BrowserRouter>
   );
