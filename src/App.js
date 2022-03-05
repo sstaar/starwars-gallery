@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Films from './components/films';
+import FilmDetails from './components/films/Details';
 import People from './components/people';
 import PersonDetails from './components/people/Details';
 import Planet from './components/planets';
@@ -14,6 +16,8 @@ const App = () => {
         <Route path='/people/:id' element={<PersonDetails />} />
         <Route path='/planets' element={<Planet />} />
         <Route path='/planets/:id' element={<PlanetDetails />} />
+        <Route path='/films' element={<Films />} />
+        <Route path='/films/:id' element={<FilmDetails />} />
       </Routes>
     </BrowserRouter>
   );

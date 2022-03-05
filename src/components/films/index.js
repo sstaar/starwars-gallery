@@ -36,17 +36,17 @@ const ButtonText = styled.p`
     font-weight:700;
 `;
 
-const Planet = () => {
+const Films = () => {
 
     const [data, setData] = useState({
-        planets: [],
+        films: [],
         loading: true,
         page: 1,
         next: false,
         previous: false,
     })
 
-    const { planets, loading, page, next, previous } = data;
+    const { films, loading, page, next, previous } = data;
 
     const handleChangePage = (isNext) => {
         if (isNext && next)
@@ -58,10 +58,10 @@ const Planet = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await axios.get(`https://swapi.dev/api/planets/?page=${page}`);
+                const response = await axios.get(`https://swapi.dev/api/films/?page=${page}`);
                 setData({
                     loading: false,
-                    planets: response.data.results,
+                    films: response.data.results,
                     next: response.data.next,
                     previous: response.data.previous,
                     page
@@ -77,7 +77,7 @@ const Planet = () => {
         return (
             <Container>
                 <Grid container spacing={2}>
-                    {[...Array(10)].map((item, key) => <Grid key={key} item xs={6} md={6}> <LoadingCard /> </Grid>)}
+                    {[...Array(6)].map((item, key) => <Grid key={key} item xs={6} md={6}> <LoadingCard /> </Grid>)}
                 </Grid>
                 <ButtonsContainer>
                     <Button disabled={true} onClick={() => handleChangePage(null)}>
@@ -92,7 +92,7 @@ const Planet = () => {
     return (
         <Container>
             <Grid container spacing={2}>
-                {planets.map((planet, key) => <Grid key={key} item xs={6} md={6}> <Card planet={planet} /> </Grid>)}
+                {films.map((film, key) => <Grid key={key} item xs={6} md={6}> <Card film={film} /> </Grid>)}
             </Grid>
             <ButtonsContainer>
                 <Button disabled={!previous} onClick={() => handleChangePage(null)}>
@@ -106,4 +106,4 @@ const Planet = () => {
     )
 };
 
-export default Planet;
+export default Films;

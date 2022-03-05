@@ -39,54 +39,37 @@ const DetailsLoading = () => {
     return (
         <Container>
             <DataContainer>
-                <DataLabel>Name </DataLabel>
+                <DataLabel>Title </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Climate </DataLabel>
+                <DataLabel>Director </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Diameter </DataLabel>
+                <DataLabel>Episode </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Population </DataLabel>
+                <DataLabel>Opening Crawl </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Gravity </DataLabel>
+                <DataLabel>Producer </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Orbital Period </DataLabel>
-                <DataValue><Skeleton variant="text" width={160} /></DataValue>
-            </DataContainer>
-            <Divider />
-            <DataContainer>
-                <DataLabel>Rotation Period </DataLabel>
-                <DataValue><Skeleton variant="text" width={160} /></DataValue>
-            </DataContainer>
-            <Divider />
-            <DataContainer>
-                <DataLabel>Skin color </DataLabel>
+                <DataLabel>Release Date </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
                 <DataLabel>StarShips </DataLabel>
-                <TabletsContainer>
-                    <Skeleton variant="rectangular" width={"100%"} height={25} />
-                </TabletsContainer>
-            </DataContainer>
-            <Divider />
-            <DataContainer>
-                <DataLabel>Films </DataLabel>
                 <TabletsContainer>
                     <Skeleton variant="rectangular" width={"100%"} height={25} />
                 </TabletsContainer>
@@ -100,9 +83,9 @@ const DetailsLoading = () => {
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Home World </DataLabel>
+                <DataLabel>Planets </DataLabel>
                 <TabletsContainer>
-                    <Skeleton variant="rectangular" width={25} height={25} />
+                    <Skeleton variant="rectangular" width={"100%"} height={25} />
                 </TabletsContainer>
             </DataContainer>
             <Divider />

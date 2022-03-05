@@ -44,32 +44,32 @@ const DetailsLoading = () => {
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Climate </DataLabel>
+                <DataLabel>Gender </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Diameter </DataLabel>
+                <DataLabel>Birth Year </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Population </DataLabel>
+                <DataLabel>Height </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Gravity </DataLabel>
+                <DataLabel>Mass </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Orbital Period </DataLabel>
+                <DataLabel>Hair Color </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Rotation Period </DataLabel>
+                <DataLabel>Eye Color </DataLabel>
                 <DataValue><Skeleton variant="text" width={160} /></DataValue>
             </DataContainer>
             <Divider />

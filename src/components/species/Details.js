@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
 import styled from "styled-components";
 import Card from '@mui/material/Card';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import Divider from '@mui/material/Divider';
-import { Skeleton } from '@mui/material';
+import DataTablet from '../utils/DataTablet';
+import DetailsLoading from './DetailsLoading';
 
 const Container = styled(Card)`
+    /* margin: 50px auto ; */
+    /* height:46px; */
+    /* margin:5px; */
     border-radius:3px;
     width:80%;
     margin:auto;
@@ -13,7 +19,7 @@ const Container = styled(Card)`
 
 const DataContainer = styled.div`
     display:flex;
-    margin:10px;
+    margin:15px 0;
 `;
 
 const DataLabel = styled.p`
@@ -35,85 +41,109 @@ const TabletsContainer = styled.div`
     gap: 5px;
 `;
 
-const DetailsLoading = () => {
+const Details = () => {
+
+    let { id } = useParams();
+
+    const [data, setData] = useState({
+        person: {},
+        loading: true
+    });
+
+    const { person, loading } = data;
+
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const response = await axios(`https://swapi.dev/api/people/${id}`)
+                setData({ person: response.data, loading: false });
+            } catch (error) {
+                console.log(error)
+            }
+        };
+        getData();
+    }, [])
+
+    if (loading)
+        return <DetailsLoading />
     return (
         <Container>
             <DataContainer>
                 <DataLabel>Name </DataLabel>
-                <DataValue><Skeleton variant="text" width={160} /></DataValue>
+                <DataValue>{person.name}</DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Climate </DataLabel>
-                <DataValue><Skeleton variant="text" width={160} /></DataValue>
+                <DataLabel>Gender </DataLabel>
+                <DataValue>{person.gender}</DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Diameter </DataLabel>
-                <DataValue><Skeleton variant="text" width={160} /></DataValue>
+                <DataLabel>Birth Year </DataLabel>
+                <DataValue>{person.birth_year}</DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Population </DataLabel>
-                <DataValue><Skeleton variant="text" width={160} /></DataValue>
+                <DataLabel>Height </DataLabel>
+                <DataValue>{person.height}</DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Gravity </DataLabel>
-                <DataValue><Skeleton variant="text" width={160} /></DataValue>
+                <DataLabel>Mass </DataLabel>
+                <DataValue>{person.mass}</DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Orbital Period </DataLabel>
-                <DataValue><Skeleton variant="text" width={160} /></DataValue>
+                <DataLabel>Hair Color </DataLabel>
+                <DataValue>{person.hair_color}</DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
-                <DataLabel>Rotation Period </DataLabel>
-                <DataValue><Skeleton variant="text" width={160} /></DataValue>
+                <DataLabel>Eye Color </DataLabel>
+                <DataValue>{person.eye_color}</DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
                 <DataLabel>Skin color </DataLabel>
-                <DataValue><Skeleton variant="text" width={160} /></DataValue>
+                <DataValue>{person.skin_color}</DataValue>
             </DataContainer>
             <Divider />
             <DataContainer>
                 <DataLabel>StarShips </DataLabel>
                 <TabletsContainer>
-                    <Skeleton variant="rectangular" width={"100%"} height={25} />
+                    {person.starships.map((item, key) => <DataTablet key={key} type="SHIP" link={item} />)}
                 </TabletsContainer>
             </DataContainer>
             <Divider />
             <DataContainer>
                 <DataLabel>Films </DataLabel>
                 <TabletsContainer>
-                    <Skeleton variant="rectangular" width={"100%"} height={25} />
+                    {person.films.map((item, key) => <DataTablet key={key} type="FILM" link={item} />)}
                 </TabletsContainer>
             </DataContainer>
             <Divider />
             <DataContainer>
                 <DataLabel>Vehicles </DataLabel>
                 <TabletsContainer>
-                    <Skeleton variant="rectangular" width={"100%"} height={25} />
+                    {person.vehicles.map((item, key) => <DataTablet key={key} type="VEHICLE" link={item} />)}
                 </TabletsContainer>
             </DataContainer>
             <Divider />
             <DataContainer>
                 <DataLabel>Home World </DataLabel>
                 <TabletsContainer>
-                    <Skeleton variant="rectangular" width={25} height={25} />
+                    <DataTablet type="PLANET" link={person.homeworld} />
                 </TabletsContainer>
             </DataContainer>
             <Divider />
             <DataContainer>
                 <DataLabel>Species </DataLabel>
                 <TabletsContainer>
-                    <Skeleton variant="rectangular" width={"100%"} height={25} />
+                    {person.species.map((item, key) => <DataTablet key={key} type="SPECIES" link={item} />)}
                 </TabletsContainer>
             </DataContainer>
         </Container>
     )
 }
 
-export default DetailsLoading
+export default Details

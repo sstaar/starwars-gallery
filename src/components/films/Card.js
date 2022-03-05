@@ -11,7 +11,6 @@ const Container = styled(Link)`
     /* border-radius:3px; */
     /* width:19%; */
     text-decoration:none;
-    
 `;
 
 const CustonCard = styled(Card)`
@@ -29,6 +28,11 @@ const DataLabel = styled.p`
     color:#333;
     margin:0 5px 0 0;
     width:50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 `;
 
 const DataValue = styled.p`
@@ -36,32 +40,37 @@ const DataValue = styled.p`
     color:#333;
     margin:0;
     width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 `;
 
-const PlanetCard = ({ planet }) => {
+const filmCard = ({ film }) => {
 
     return (
-        <Container to={'/planets/' + getDataId(planet.url)}>
+        <Container to={'/films/' + getDataId(film.url)}>
             <CustonCard>
                 <DataContainer>
-                    <DataLabel>Name </DataLabel>
-                    <DataValue>{planet.name}</DataValue>
+                    <DataLabel>Title </DataLabel>
+                    <DataValue>{film.title}</DataValue>
                 </DataContainer>
                 <DataContainer>
-                    <DataLabel>Climate </DataLabel>
-                    <DataValue>{planet.climate}</DataValue>
+                    <DataLabel>Director </DataLabel>
+                    <DataValue>{film.director}</DataValue>
                 </DataContainer>
                 <DataContainer>
-                    <DataLabel>Diameter </DataLabel>
-                    <DataValue>{planet.diameter}</DataValue>
+                    <DataLabel>Producer </DataLabel>
+                    <DataValue>{film.producer}</DataValue>
                 </DataContainer>
                 <DataContainer>
-                    <DataLabel>Population </DataLabel>
-                    <DataValue>{planet.population}</DataValue>
+                    <DataLabel>Release Date </DataLabel>
+                    <DataValue>{film.release_date}</DataValue>
                 </DataContainer>
             </CustonCard>
         </Container>
     )
 }
 
-export default PlanetCard;
+export default filmCard

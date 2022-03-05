@@ -36,17 +36,17 @@ const ButtonText = styled.p`
     font-weight:700;
 `;
 
-const Planet = () => {
+const People = () => {
 
     const [data, setData] = useState({
-        planets: [],
+        people: [],
         loading: true,
         page: 1,
         next: false,
         previous: false,
     })
 
-    const { planets, loading, page, next, previous } = data;
+    const { people, loading, page, next, previous } = data;
 
     const handleChangePage = (isNext) => {
         if (isNext && next)
@@ -58,10 +58,10 @@ const Planet = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await axios.get(`https://swapi.dev/api/planets/?page=${page}`);
+                const response = await axios.get(`https://swapi.dev/api/people/?page=${page}`);
                 setData({
                     loading: false,
-                    planets: response.data.results,
+                    people: response.data.results,
                     next: response.data.next,
                     previous: response.data.previous,
                     page
@@ -92,7 +92,7 @@ const Planet = () => {
     return (
         <Container>
             <Grid container spacing={2}>
-                {planets.map((planet, key) => <Grid key={key} item xs={6} md={6}> <Card planet={planet} /> </Grid>)}
+                {people.map((person, key) => <Grid key={key} item xs={6} md={6}> <Card person={person} /> </Grid>)}
             </Grid>
             <ButtonsContainer>
                 <Button disabled={!previous} onClick={() => handleChangePage(null)}>
@@ -106,4 +106,4 @@ const Planet = () => {
     )
 };
 
-export default Planet;
+export default People;

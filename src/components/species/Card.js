@@ -38,30 +38,30 @@ const DataValue = styled.p`
     width: 50%;
 `;
 
-const PlanetCard = ({ planet }) => {
+const PersonCard = ({ person }) => {
 
     return (
-        <Container to={'/planets/' + getDataId(planet.url)}>
+        <Container to={'/people/' + getDataId(person.url)}>
             <CustonCard>
                 <DataContainer>
                     <DataLabel>Name </DataLabel>
-                    <DataValue>{planet.name}</DataValue>
+                    <DataValue>{person.name}</DataValue>
                 </DataContainer>
                 <DataContainer>
-                    <DataLabel>Climate </DataLabel>
-                    <DataValue>{planet.climate}</DataValue>
+                    <DataLabel>Gender </DataLabel>
+                    <DataValue>{person.gender}</DataValue>
                 </DataContainer>
                 <DataContainer>
-                    <DataLabel>Diameter </DataLabel>
-                    <DataValue>{planet.diameter}</DataValue>
+                    <DataLabel>Mass </DataLabel>
+                    <DataValue>{person.mass}</DataValue>
                 </DataContainer>
                 <DataContainer>
-                    <DataLabel>Population </DataLabel>
-                    <DataValue>{planet.population}</DataValue>
+                    <DataLabel>Height </DataLabel>
+                    <DataValue>{person.height}</DataValue>
                 </DataContainer>
             </CustonCard>
         </Container>
     )
 }
 
-export default PlanetCard;
+export default PersonCard
