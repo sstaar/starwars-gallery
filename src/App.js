@@ -10,6 +10,8 @@ import SpeciecesDetails from './components/species/Details';
 import StarShips from './components/starships';
 import StarShipsDetails from './components/starships/Details';
 import Tabs from './components/tabs';
+import Vehicles from './components/vehicles';
+import VehiclesDetails from './components/vehicles/Details';
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
         <Route path='/species/:id' element={<SpeciecesDetails />} />
         <Route path='/starships' element={<StarShips />} />
         <Route path='/starships/:id' element={<StarShipsDetails />} />
+        <Route path='/vehicles' element={<Vehicles />} />
+        <Route path='/vehicles/:id' element={<VehiclesDetails />} />
       </Routes>
     </BrowserRouter>
   );
